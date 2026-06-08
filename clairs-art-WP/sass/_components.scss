@@ -1,0 +1,166 @@
+@use 'variables' as *;
+
+// Colour utility classes
+.text-terracotta { color: var(--ca-terracotta); }
+.text-brown      { color: var(--ca-brown); }
+.text-cream      { color: var(--ca-cream); }
+.text-gold       { color: var(--ca-gold); }
+
+// Buttons
+.btn {
+	border-radius: 2rem;
+	padding: 0.5rem 1.5rem;
+}
+
+.btn-autumn {
+	background-color: $ca-terracotta;
+	border-color: $ca-terracotta;
+	color: #fff;
+}
+
+.btn-autumn:hover {
+	background-color: #a0521f;
+	border-color: #a0521f;
+	color: #fff;
+}
+
+.btn-outline-autumn {
+	color: $ca-terracotta;
+	border-color: $ca-terracotta;
+}
+
+.btn-outline-autumn:hover {
+	background-color: $ca-terracotta;
+	color: #fff;
+}
+
+// Cards
+.card {
+	--bs-card-border-radius: 1rem;
+	--bs-card-inner-border-radius: calc(1rem - 1px);
+	overflow: hidden;
+}
+
+// Forms
+.form-control {
+	border-radius: 0.75rem;
+}
+
+.form-label {
+	font-weight: 500;
+}
+
+// Artwork / product grid
+.product-card-img {
+	object-fit: cover;
+	height: 280px;
+}
+
+.product-card {
+	a {
+		display: block;
+	}
+}
+
+.product-card .card {
+	transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.product-card .card:hover {
+	box-shadow: 0 6px 20px rgba($ca-terracotta, 0.15);
+	transform: translateY(-3px);
+}
+
+// Sold badge
+.badge.bg-secondary {
+	background-color: $ca-muted !important;
+	font-weight: 400;
+	font-size: 0.75rem;
+}
+
+// Section headings
+.section-title {
+	font-size: 1.5rem;
+	font-weight: 400;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	margin-bottom: 2rem;
+	color: $ca-terracotta;
+	position: relative;
+	padding-bottom: 0.75rem;
+
+
+	&::after {
+		content: '';
+		display: block;
+		width: 36px;
+		height: 2px;
+		background-color: $ca-terracotta;
+		margin-top: 0.5rem;
+	}
+}
+
+.section-title.text-center::after {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Entry / page content
+.entry-title {
+	font-size: 2rem;
+	font-weight: 400;
+}
+
+.entry-content p {
+	line-height: 1.85;
+	margin-bottom: 1.25rem;
+}
+
+.entry-meta {
+	font-size: 0.875rem;
+	color: $ca-muted;
+	margin-top: 0.25rem;
+}
+
+// Responsive
+@media (max-width: 767px) {
+	.product-card-img {
+		height: 200px;
+	}
+}
+
+// Artwork card — clickable gallery card
+.artwork-card {
+	cursor: pointer;
+}
+
+.artwork-card .product-card-img {
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.artwork-card:hover .product-card-img {
+	transform: scale(1.04);
+	opacity: 0.88;
+}
+
+.artwork-card:focus-visible {
+	outline: 2px solid $ca-terracotta;
+	outline-offset: 2px;
+}
+
+// Artwork detail modal
+.artwork-modal-img {
+	width: 100%;
+	height: 100%;
+	min-height: 320px;
+	max-height: 500px;
+	object-fit: cover;
+	display: block;
+}
+
+.artwork-modal-close {
+	position: absolute;
+	top: 0.75rem;
+	right: 0.75rem;
+	z-index: 10;
+}

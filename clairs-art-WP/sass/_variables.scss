@@ -1,0 +1,16 @@
+// Colour palette
+$ca-terracotta: #C0602A;
+$ca-gold:       #C8973A;
+$ca-pink:       #E8A8A8;
+$ca-cream:      #FDF3E7;
+$ca-light-pink: #FDF0EE;
+$ca-brown:      #3D2E26;
+$ca-border:     #EDD9C8;
+$ca-muted:      #8a6e5e;
+
+// Bootstrap variable overrides
+$font-family-base:    'Nunito', sans-serif;
+$body-color:          $ca-brown;
+$border-radius:       0.75rem;
+$border-radius-sm:    0.5rem;
+$border-radius-lg:    1rem;
