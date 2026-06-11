@@ -2,24 +2,17 @@
 
 <main id="primary" class="site-main py-5">
 <div class="container">
+	<?php
+	$title = __('Latest Posts', 'clairs-art');
+
+	if (is_category() || is_tag() || is_archive()) {
+		$title = get_the_archive_title();
+	}
+	?>
 
 	<?php if (have_posts()) : ?>
 
-	<h1 class="entry-title mb-5">
-		<?php
-		if (is_category()) {
-			single_cat_title();
-		} elseif (is_tag()) {
-			single_tag_title();
-		} elseif (is_archive()) {
-			the_archive_title();
-		} elseif (is_search()) {
-			printf(esc_html__('Search results for: %s', 'clairs-art'), '<span>' . esc_html(get_search_query()) . '</span>');
-		} else {
-			esc_html_e('Latest Posts', 'clairs-art');
-		}
-		?>
-	</h1>
+	<h1 class="entry-title mb-5"><?php echo esc_html($title); ?></h1>
 
 	<div class="row g-4">
 		<?php while (have_posts()) : the_post(); ?>
@@ -36,7 +29,7 @@
 					</h2>
 					<p class="entry-meta mb-2"><?php echo esc_html(get_the_date()); ?></p>
 					<div class="entry-content"><?php the_excerpt(); ?></div>
-					<a href="<?php the_permalink(); ?>" class="btn btn-sm btn-outline-autumn"><?php esc_html_e('Read more', 'clairs-art'); ?></a>
+					<a href="<?php the_permalink(); ?>" class="btn btn-sm btn-outline-brand"><?php esc_html_e('Read more', 'clairs-art'); ?></a>
 				</div>
 			</article>
 		</div>
@@ -47,8 +40,7 @@
 
 	<?php else : ?>
 
-	<p class="text-muted"><?php esc_html_e('Nothing found. Try searching for something.', 'clairs-art'); ?></p>
-	<?php get_search_form(); ?>
+	<p class="text-muted"><?php esc_html_e('Nothing found.', 'clairs-art'); ?></p>
 
 	<?php endif; ?>
 
