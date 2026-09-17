@@ -8,7 +8,7 @@
 						'container'      => false,
 						'menu_class'     => 'nav justify-content-center justify-content-md-start',
 						'depth'          => 1,
-						'fallback_cb'    => 'clairs_art_footer_fallback_menu',
+						'fallback_cb'    => false,
 					]);
 					?>
 				</div>

@@ -15,7 +15,7 @@
 		<div class="container">
 
 			<a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
-				<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/clairs-art-logo.png'); ?>"
+				<img src="<?php echo esc_url(clairs_art_logo_url()); ?>"
 					 alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
 					 class="site-logo">
 			</a>
@@ -33,7 +33,7 @@
 					'theme_location' => 'primary',
 					'container'      => false,
 					'menu_class'     => 'navbar-nav ms-auto',
-					'fallback_cb'    => 'clairs_art_fallback_menu',
+					'fallback_cb'    => false,
 				]);
 				?>
 				<?php if (class_exists('WooCommerce') && WC()->cart) : ?>
