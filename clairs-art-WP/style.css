@@ -16,21 +16,22 @@ Text Domain: clairs-art
 
 @font-face {
   font-family: "Nunito";
-  src: url("assets/fonts/Nunito-Italic-VariableFont_wght.ttf") format("truetype");
+  src: url("assets/fonts/Nunito-Italic-VariableFont_wght.ttf")
+    format("truetype");
   font-style: italic;
   font-weight: 100 900;
   font-display: swap;
 }
 
 :root {
-  --brand: #C0602A;
-  --brand-dark: #A0521F;
-  --accent: #C8973A;
-  --paper: #FDF3E7;
-  --soft: #FDF0EE;
-  --text: #3D2E26;
-  --muted: #8A6E5E;
-  --line: #EDD9C8;
+  --brand: #c0602a;
+  --brand-dark: #a0521f;
+  --accent: #c8973a;
+  --paper: #fdf3e7;
+  --soft: #fdf0ee;
+  --text: #3d2e26;
+  --muted: #8a6e5e;
+  --line: #edd9c8;
   --bs-body-font-family: Nunito, sans-serif;
   --bs-body-color: var(--text);
   --bs-border-radius: 0.75rem;
@@ -93,12 +94,29 @@ h6 {
   display: block;
   padding: 0.5rem 0.8rem;
   text-decoration: none;
+  transition: 0.4s;
+  position: relative;
 }
 
 .navbar .navbar-nav > li > a:hover,
 .navbar .navbar-nav > .current-menu-item > a,
 .navbar .navbar-nav > .current_page_item > a {
   color: var(--brand);
+}
+
+.navbar-nav > li > a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--brand);
+  bottom: 0;
+  left: 0;
+  transition: width 0.4s;
+}
+
+.navbar .navbar-nav > li > a:hover::before {
+  width: 100%;
 }
 
 .site-hero {
@@ -226,7 +244,9 @@ h6 {
 }
 
 .product-card .card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .product-card .card:hover {
@@ -333,7 +353,9 @@ h6 {
 }
 
 .artwork-card .product-card-img {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .artwork-card:hover .product-card-img {
@@ -647,7 +669,9 @@ body.page-about .entry-content p {
   height: 2rem;
   right: 0.8rem;
   top: 0.8rem;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
   width: 2rem;
 }
 
