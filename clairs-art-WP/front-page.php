@@ -19,7 +19,7 @@
 			 alt="<?php echo esc_attr(get_bloginfo('name')); ?> logo"
 			 class="hero-logo mb-3">
 		<p class="lead mb-4 text-accent"><?php echo esc_html($tagline); ?></p>
-		<a href="<?php echo esc_url($shop_url); ?>" class="btn btn-brand btn-lg px-5">Browse the Gallery</a>
+		<a href="<?php echo esc_url($shop_url); ?>" class="btn btn-brand btn-lg px-5">Browse the Shop</a>
 	</div>
 </div>
 
